@@ -83,6 +83,39 @@ TEST(sort_and_iterate_solution, reverse_sequential_data)
     ASSERT_EQ(expected_output, actual_output);
 }
 
+TEST(sort_and_iterate_solution, single_input_positive)
+{
+    int data[] = { 11 };
+    int expected_output = 1;
+    int actual_output = 0;
+    size_t data_length = std::end(data) - std::begin(data);
+
+    actual_output = sort_and_iterate_solution(data, data_length);
+    ASSERT_EQ(expected_output, actual_output);
+}
+
+TEST(sort_and_iterate_solution, single_input_negative)
+{
+    int data[] = { -10 };
+    int expected_output = 1;
+    int actual_output = 0;
+    size_t data_length = std::end(data) - std::begin(data);
+
+    actual_output = sort_and_iterate_solution(data, data_length);
+    ASSERT_EQ(expected_output, actual_output);
+}
+
+TEST(sort_and_iterate_solution, single_input_zero)
+{
+    int data[] = { 0 };
+    int expected_output = 1;
+    int actual_output = 0;
+    size_t data_length = std::end(data) - std::begin(data);
+
+    actual_output = sort_and_iterate_solution(data, data_length);
+    ASSERT_EQ(expected_output, actual_output);
+}
+
 // gtest main
 int main(int argc, char **argv)
 {
