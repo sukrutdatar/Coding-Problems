@@ -25,7 +25,7 @@ target_link_libraries(problem_01_tests PUBLIC
   )
 
 target_compile_options(problem_01_tests PUBLIC "-pthread")
-#target_compile_definitions(problem_01_tests PUBLIC UNIT_TEST)
+
 
 project(problem_02)
 add_executable(problem_02 "${SRC}problem_02.cpp")
@@ -43,7 +43,24 @@ target_link_libraries(problem_02_tests PUBLIC
   )
 
 target_compile_options(problem_02_tests PUBLIC "-pthread")
-#target_compile_definitions(problem_02_tests PUBLIC UNIT_TEST)
+
+
+project(problem_04)
+add_executable(problem_04 "${SRC}problem_04.cpp")
+add_executable(problem_04_tests "${UTEST}problem_04_tests.cpp")
+
+find_package(GTest REQUIRED)
+target_include_directories(problem_04_tests PUBLIC
+    ${GTEST_INCLUDE_DIRS} 
+    ${SRC}
+  )
+
+target_link_libraries(problem_04_tests PUBLIC
+    ${GTEST_BOTH_LIBRARIES}
+    ${CMAKE_THREAD_LIBS_INIT}
+  )
+
+target_compile_options(problem_04_tests PUBLIC "-pthread")
 
 
 include(CPack)
