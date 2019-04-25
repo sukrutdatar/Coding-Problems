@@ -80,5 +80,4 @@ target_link_libraries(problem_06_tests PUBLIC
 
 target_compile_options(problem_06_tests PUBLIC "-pthread")
 
-
 include(CPack)
