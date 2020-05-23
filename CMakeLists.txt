@@ -2,6 +2,7 @@ cmake_minimum_required (VERSION 2.6)
 
 message(STATUS ${CMAKE_SOURCE_DIR})
 
+set (CMAKE_CXX_STANDARD 11)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY  ${CMAKE_BINARY_DIR}/bin)
 
 
@@ -83,7 +84,7 @@ target_compile_options(problem_06_tests PUBLIC "-pthread")
 
 project(problem_420)
 add_executable(problem_420 "${SRC}problem_420.cpp")
-add_executable(problem_06_tests "${UTEST}problem_420_tests.cpp")
+add_executable(problem_420_tests "${UTEST}problem_420_tests.cpp")
 find_package(GTest REQUIRED)
 target_include_directories(problem_420_tests PUBLIC
     ${GTEST_INCLUDE_DIRS} 

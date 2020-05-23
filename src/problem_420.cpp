@@ -25,8 +25,11 @@ int main()
 
 int find_nth_perfect_number(int n)
 {
+    if (n <= 0)
+        return 0;
+        
     int sum = 10;
-    return (sum + ((sum - 1) * n));
+    return (sum + (sum * n - n));
 }
 
 int find_nth_perfect_number_brute_force(int n)
