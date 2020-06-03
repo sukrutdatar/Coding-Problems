@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 2.6)
 
 message(STATUS ${CMAKE_SOURCE_DIR})
 
-set (CMAKE_CXX_STANDARD 11)
+set (CMAKE_CXX_STANDARD 14)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY  ${CMAKE_BINARY_DIR}/bin)
 
 
@@ -113,5 +113,22 @@ target_include_directories(problem_159_tests PUBLIC
 )
 
 target_compile_options(problem_159_tests PUBLIC "-pthread")
+
+
+project(problem_368)
+add_executable(problem_368 "${SRC}problem_368.cpp")
+add_executable(problem_368_tests "${UTEST}problem_368_tests.cpp")
+find_package(GTest REQUIRED)
+target_include_directories(problem_368_tests PUBLIC
+    ${GTEST_INCLUDE_DIRS} 
+    ${SRC}
+  )
+
+target_link_libraries(problem_368_tests PUBLIC
+  ${GTEST_BOTH_LIBRARIES}
+  ${CMAKE_THREAD_LIBS_INIT}
+)
+
+target_compile_options(problem_368_tests PUBLIC "-pthread")
 
 include(CPack)
