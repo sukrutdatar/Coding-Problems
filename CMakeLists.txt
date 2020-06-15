@@ -114,7 +114,6 @@ target_include_directories(problem_159_tests PUBLIC
 
 target_compile_options(problem_159_tests PUBLIC "-pthread")
 
-
 project(problem_368)
 add_executable(problem_368 "${SRC}problem_368.cpp")
 add_executable(problem_368_tests "${UTEST}problem_368_tests.cpp")
