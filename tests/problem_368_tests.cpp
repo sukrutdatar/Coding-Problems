@@ -58,3 +58,10 @@ TEST(sort_decreasing_order, duplicate_entries)
     ASSERT_EQ(expected_output, actual_output);
     ASSERT_EQ(data.length(), actual_output.length());
 }
+
+// gtest main
+int main(int argc, char **argv)
+{
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}

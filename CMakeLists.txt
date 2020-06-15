@@ -131,4 +131,21 @@ target_link_libraries(problem_368_tests PUBLIC
 
 target_compile_options(problem_368_tests PUBLIC "-pthread")
 
+
+project(problem_214)
+add_executable(problem_214 "${SRC}problem_214.cpp")
+add_executable(problem_214_tests "${UTEST}problem_214_tests.cpp")
+find_package(GTest REQUIRED)
+target_include_directories(problem_214_tests PUBLIC
+    ${GTEST_INCLUDE_DIRS} 
+    ${SRC}
+  )
+
+target_link_libraries(problem_214_tests PUBLIC
+  ${GTEST_BOTH_LIBRARIES}
+  ${CMAKE_THREAD_LIBS_INIT}
+)
+
+target_compile_options(problem_214_tests PUBLIC "-pthread")
+
 include(CPack)
